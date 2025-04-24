@@ -58,7 +58,6 @@ public abstract class Beverage {
     public String toString() {
         return "Beverage{" +
                 "description='" + description + '\'' +
-                ", price=" + price +
                 ", syrup=" + syrup +
                 ", vanilla=" + vanilla +
                 ", cinnamon=" + cinnamon +

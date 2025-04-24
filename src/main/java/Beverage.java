@@ -5,6 +5,10 @@ public abstract class Beverage {
     private boolean vanilla;
     private boolean cinnamon;
 
+    public final double PRICE_SYRUP = 30;
+    public final double PRICE_VANILLA = 30;
+    public final double PRICE_CINNAMON = 30;
+
     public Beverage(String description, double price, boolean syrup, boolean vanilla, boolean cinnamon) {
         this.description = description;
         this.price = price;
@@ -34,5 +38,31 @@ public abstract class Beverage {
         return description;
     }
 
-    protected abstract double cost();
+    protected double cost() {
+        double totalPrice = getPrice();
+        if (isSyrup()) {
+            totalPrice += PRICE_SYRUP;
+        }
+        if (isVanilla()) {
+            totalPrice += PRICE_VANILLA;
+        }
+        if (isCinnamon()) {
+            totalPrice += PRICE_CINNAMON;
+        }
+        return totalPrice;
+
+
+    }
+
+    @Override
+    public String toString() {
+        return "Beverage{" +
+                "description='" + description + '\'' +
+                ", price=" + price +
+                ", syrup=" + syrup +
+                ", vanilla=" + vanilla +
+                ", cinnamon=" + cinnamon +
+                ", total price=" + cost() +
+                '}';
+    }
 }

@@ -4,8 +4,5 @@ public class Tea extends Beverage{
         super(description, price, syrup, vanilla, cinnamon);
     }
 
-    @Override
-    protected double cost() {
-        return getPrice();
-    }
+
 }
